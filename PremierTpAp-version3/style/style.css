@@ -1573,7 +1573,7 @@ button {
 
     .slogan {
 
-        top: 80px;
+        top: 50px;
         left: 70px;
         
     }
@@ -1585,8 +1585,15 @@ button {
     }
 
     .menuport h3 {
+
         padding: 10px;
         font-size: 12px;
+    }
+
+    .menuport li {
+
+        width: 80px;
+    
     }
     
     .imageport {
@@ -1952,7 +1959,7 @@ button {
 
     .menuport li {
 
-        width: 75px;
+        width: 85px;
     
     }
 
@@ -1996,11 +2003,22 @@ button {
 
 }
 
+
 @media screen and (max-width: 350px) {
 
     .formulaire {
 
         right: 15%;
+    }
+
+    .menuport li {
+
+        width: 75px;
+    }
+
+    .menuport h3 {
+        
+        font-size: 10px;
     }
 
 }
@@ -2015,27 +2033,27 @@ button {
 
     .slogan {
 
-        top: 15px;
+        top: 12px;
         left: 25px;
         width: 85%;
     }
 
     .slogan h1 {
 
-        margin-bottom: 5px;
+        margin-bottom: 3px;
         font-size: 10px;
 
     }
 
     .slogan p {
 
-        margin-bottom: 5px;
+        margin-bottom: 3px;
         font-size: 9px;
 
     }
 
     .slogan a {
-        padding: 5px;
+        padding: 4px;
         font-size: 9px;
     }
 
@@ -2052,8 +2070,14 @@ button {
 
     .menuport h3 {
 
-        font-size: 11px;
-        padding: 7px;
+        font-size: 9px;
+        padding: 5px;
+    
+    }
+
+    .menuport li {
+
+        width: 62px;
     
     }
 
@@ -2106,9 +2130,16 @@ button {
         padding: 6px;
     }
 
-    
+    .slogan {
+
+        top: 9px;
+        left: 18px;
+        width: 95%;
+    }
+
     .slogan h1 {
-        margin-bottom: 2px;
+
+        margin-bottom: 1px;
         font-size: 9px;
     }
 
@@ -2120,7 +2151,7 @@ button {
     
     .slogan a {
 
-        padding: 4px;
+        padding: 2px;
     
     }
 
