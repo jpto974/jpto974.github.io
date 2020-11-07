@@ -1,0 +1,2103 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/* css header *******************/
+
+header {
+
+    width: 100%;
+    margin-bottom: 50px;
+
+}
+
+/* css navigation fixed *******************/
+
+nav {
+
+    position: fixed;
+    top: 0px;
+    left: 15px;
+    z-index: 999;
+    width: calc(100% - 30px);
+    height: 100px;
+    margin-bottom: 15px;
+    background-color: white;
+
+}
+
+/****** css div contenant le menu  *******************/
+
+.container {
+
+    
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+
+
+}
+
+/******* container du logo *******/
+
+.logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+
+}
+
+/**** logo ***********/
+
+.logo a {
+
+    width: 100%;
+    display: block;
+    align-self: center;
+
+}
+
+
+/***** container de item menu ******/
+
+.items {
+
+    width: 100%;
+    height: 100%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/***** css item contenant les balises a pour le menu *****/
+
+.items .item {
+
+    display: flex;
+    height: 100%;
+    margin-left: 15px;
+    border-top: 3px solid #11ffee00;
+    
+}
+
+/******* dernier enfant du menu dernier bouton ******/
+
+.items:last-child {
+
+    margin-right: 15px;
+
+}
+
+/**** css bouton du menu  *******************/
+
+.item a {
+
+    display: block;
+    align-self: center;
+    text-decoration: none;
+    color: #7c7c7c;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/****** css mouvement sur le menu  *******************/
+
+.items .item:hover {
+
+    border-top: 3px solid #5dadd3;
+
+}
+
+.items .item a:hover {
+
+    
+    color: #616161;
+
+}
+
+/****** css Slider  *******************/
+
+.slider {
+
+    padding-top: 100px;
+    width: 100%;
+
+}
+
+/****** css Slides container du slogan, des image et des radios  *******************/
+
+.slides {
+
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(#fcfcfc, 98% ,#d6d6d6);
+
+}
+
+/****** css Slide container des img  *******************/
+
+.slide {
+
+    
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    z-index: -1;
+
+} 
+
+.slide img {
+
+    width: 100%;
+
+}
+
+/* css Slogan sur le slider *******************/
+
+.slogan {
+
+    position: absolute;
+    top: 150px;
+    left: 130px;
+    margin: auto;
+    width: 80%;
+    color: white;
+    z-index: 2;
+
+}
+
+.slogan strong {
+
+    color: #5dadd3;
+
+}
+
+.slogan h1 {
+
+    margin-bottom: 15px;
+
+}
+
+.slogan p {
+
+    margin-bottom: 30px;
+
+}
+
+/***** Bouton du slogan ************************/
+
+.slogan a {
+
+    text-decoration: none;
+    color: white;
+    background-color: #5dadd3;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #4594bb;
+
+}
+
+/* css bouton de selection du slider *******************/
+
+.pre, .next {
+
+    position: absolute;
+    top: 35%;
+    cursor: pointer;
+    width: 3%;
+    height: 70px;
+    background-color: rgba(88, 88, 88, .8);
+    text-align: center;
+    color: white;
+    padding-top: 2%;
+    font-size: 30px;
+
+}
+
+.pre{
+
+    left: 0px;
+    border-top-right-radius: 100% 50%;
+    border-bottom-right-radius: 100% 50%;
+    
+    
+}
+
+.next {
+
+    right: 0px;
+    border-top-left-radius: 100% 50%;
+    border-bottom-left-radius: 100% 50%;
+    
+
+}
+
+/* css check entre les deux images *******************/
+
+#radio1:checked ~ #img1, #radio2:checked ~ #img2 {
+
+    display: block;
+    z-index: 1;
+
+}
+
+#radio1:checked ~ #img2, #radio2:checked ~ #img1 {
+
+    display: none;
+    z-index: 0;
+
+}
+
+
+#radio1, #radio2, #radio3 {
+
+    display: none;
+
+}
+
+/* css separation des sections *******************/
+
+.separation {
+
+
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+.separation hr {
+
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+
+}
+
+/* css section *******************/
+
+#serv, #port, #cont {
+
+    margin-top: 10px;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+
+}
+
+
+
+/* css separation titre de la section avec contenu *******************/
+
+
+.separation2 {
+
+    position: relative;
+    height: 9px;
+
+}
+
+.separation2 hr {
+
+    position: absolute;
+    top: 80%;
+    width: 10%;
+}
+
+/******** rond blanc ********/
+
+.blanc {
+
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+
+}
+
+/******** rond bleu ********/
+
+.bleu {
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #5dadd3;
+    border-radius: 50%;
+
+}
+
+/******* mise place des ronds sur le trait hr ********/
+
+.separation2 .blanc {
+
+    top: 0px;
+
+}
+
+.separation2 .bleu {
+
+    top: 5px;
+    right: 5px;
+}
+
+/* css titre et sous titre des sections  *******************/
+
+h2 {
+
+   font-weight: bold;
+   margin: 30px;
+   font-size: 40px; 
+
+}
+.sstitre {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    
+
+}
+
+.sstitre p {
+
+    display: block;
+    font-size: 15px;
+    width: 30%;
+}
+
+/* css section Nos services *******************/
+
+#serv {
+
+    
+    background: linear-gradient(#fcfcfc, 98% ,#d6d6d6);
+
+}
+
+/******** container de service ***********/
+
+.presentation {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/******* container de l image ********/
+
+.preim {
+
+    width: 50%;
+    align-self: center;
+
+}
+
+.preim img {
+
+    width: 60%;
+}
+
+/****  listes services ******/
+
+.listeserv {
+
+    align-self: flex-end;
+    display: flex;
+    width: 50%;
+
+}
+
+/***** logo des services ********/
+
+.logoserv {
+
+    width: 10%;
+
+
+}
+
+.imagefont {
+
+    position: relative;
+    width: 100%;
+
+}
+
+/******* css rond blanc et bleu logos services *****/
+
+.imagefont .bleu {
+
+    left: 5px;
+    top: 5px;
+
+}
+
+.imagefont .blanc {
+
+    left: 58px;
+    top: 16px;
+
+}
+
+/******* css font des logos services *****/
+
+.font {
+
+    position: absolute;
+    left: 20%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    color: #5dadd3;
+    font-size: 20px;
+    padding: 15px;
+
+}
+
+/***** textes services *******/
+
+.textserv {
+
+    width: 70%;
+    padding-bottom: 20px;
+    margin-left: 100px;
+    text-align: start;
+
+}
+
+.textserv h3 {
+
+    font-weight: bold;
+
+}
+
+.textserv p {
+
+    display: block;
+    font-size: 14px;
+}
+
+
+ul {
+    list-style: none;
+}
+
+/* css section portfolio *******************/
+
+#port {
+
+    background: linear-gradient(#f5f5f5, 98% ,#eaeaea);
+
+}
+
+/****** menu portfolio ***********/
+
+/******* les categories *******/
+
+#allworks, #creative, #corporate, #portfoliom {
+
+    display: none;
+
+}
+
+/****** menu *******/
+
+.menuport {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.menuport ul {
+
+    list-style: none;
+    margin-top: 25px;
+    margin-bottom: 45px;
+
+
+}
+
+.menuport li {
+
+    display: inline-block;
+    background-color: #e5e5e5;
+    width: 106px;
+
+}
+
+.menuport li:first-child {
+
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+
+}
+
+.menuport li:last-child {
+
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+}
+
+.menuport h3 {
+
+    padding: 10px;
+
+}
+
+.menuport label {
+
+    position: relative;
+    text-decoration: none;
+    color: #888b8e;
+    cursor: pointer;
+}
+
+.menuport i {
+
+    display: none;
+
+}
+
+/******* container des images portfolio *******/
+
+.portab {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+/***** contient l'image et texte *******/
+
+.imageport {
+
+    width: 20%;
+    margin: 5px;
+}
+
+/****** css pour différencier chaque categorie *******/
+
+.creat, .portf, .corp {
+
+    position: relative;
+    width: 100%;
+    height: 200px;
+    
+
+}
+
+.creat img {
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 0px;
+
+}
+
+.portf img {
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 0px;
+
+}
+
+.corp img {
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 0px;
+
+}
+
+/******* le commentaire de chaque image ******/
+
+.comment {
+
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(88, 88, 88, .8);
+    width: calc(100% - 20px);
+    height: 50px;
+    color: white;
+    cursor: pointer;
+    text-align: start;
+    opacity: 0;
+    padding: 10px;
+    
+}
+
+/****** l'oeil decoratif des commentaires ********/
+
+.eye {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #4692b1;
+    padding: 12px;
+    border: 2px solid white;
+    right: 10px;
+    top: -20px;
+}
+
+/****** passage souris sur l'image apparition commentaire *******/
+
+.creat:hover .comment, .portf:hover .comment, .corp:hover .comment {
+
+    opacity: 1;
+
+}
+
+/****** modification du menu au clic de la souris ******/
+
+#allworks:checked ~ * .call, #creative:checked ~ * .ccrt, #corporate:checked ~ * .ccrp, #portfoliom:checked ~ * .cptf {
+
+    background-color: #5dadd3;
+    box-shadow: 0px 3px 1px #468cad;
+
+}
+
+#allworks:checked ~ * .checkall, #creative:checked ~ * .checkcrt, #corporate:checked ~ * .checkcrp, #portfoliom:checked ~ * .checkptf {
+
+    color: #feffff;
+
+}
+
+/**** la fleche du clic********/
+
+#allworks:checked ~ * .checkall i, #creative:checked ~ * .checkcrt i, #corporate:checked ~ * .checkcrp i, #portfoliom:checked ~ * .checkptf i {
+
+    position: absolute;
+    display: block;
+    color: #468cad;
+    font-size: 18px;
+    right: 43%;
+    bottom: -25px;
+
+
+}
+
+/******* hover du menu *********/
+
+#allworks:hover ~ * .call, #creative:hover ~ * .ccrt, #corporate:hover ~ * .ccrp, #portfoliom:hover ~ * .cptf {
+
+    background-color: #5dadd3;
+    box-shadow: 0px 3px 1px #468cad;
+
+}
+
+#allworks:hover ~ * .checkall, #creative:hover ~ * .checkcrt, #corporate:hover ~ * .checkcrp, #portfoliom:hover ~ * .checkptf {
+
+    color: #feffff;
+
+}
+
+#allworks:hover ~ * .checkall i, #creative:hover ~ * .checkcrt i, #corporate:hover ~ * .checkcrp i, #portfoliom:hover ~ * .checkptf i {
+
+    position: absolute;
+    display: block;
+    color: #468cad;
+    font-size: 18px;
+    right: 43%;
+    bottom: -25px;
+
+
+}
+
+/******* affichage des images de toutes les categories ********/
+
+#allworks:checked ~ * .creat, #allworks:checked ~ * .corp, #allworks:checked ~ * .portf {
+
+    display: block;
+    
+
+}
+
+/****** masquage des categories autre que creative *******/
+
+#creative:checked ~ * .corp, #creative:checked ~ * .portf {
+
+    display: none;
+    
+}
+
+/***** disparition totale dans le parent des autres *******/
+
+#creative:checked ~ * .crp, #creative:checked ~ * .ptf {
+
+    height: 0px;
+    margin: 0px;
+    width: 0px;
+    
+}
+
+/***** affichage des creatives ********/
+
+#creative:checked ~ * .creat {
+
+    display: block;
+    
+}
+
+/***** affichage des corporates ********/
+
+
+#corporate:checked ~ * .corp {
+
+    display: block;
+    
+}
+
+/******* masquage des autres *********/
+
+#corporate:checked ~ * .creat, #corporate:checked ~ * .portf {
+
+    display: none;
+    
+}
+
+/****** disparition en volume des autres *****/
+
+#corporate:checked ~ * .crt, #corporate:checked ~ * .ptf {
+
+    height: 0px;
+    margin: 0px;
+    width: 0px;
+    
+}
+
+/***** affichage des portfolios ********/
+
+#portfoliom:checked ~ * .portf {
+
+    display: block;
+    
+}
+
+/******* masquage des autres *********/
+
+#portfoliom:checked ~ * .creat, #portfoliom:checked ~ * .corp {
+
+    display: none;
+    
+}
+
+/****** disparition en volume des autres *****/
+
+#portfoliom:checked ~ * .crt, #portfoliom:checked ~ * .crp {
+
+    height: 0px;
+    margin: 0px;
+    width: 0px;
+    
+}
+
+/* css separation3 avec une balise  *******************/
+
+.fix {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 10%;
+    margin-left: 45%;
+    height: 50px;
+}
+
+.separation3 {
+    position: relative;
+    border-top: 2px solid #e0e0e0;
+    width: 100%;
+    height: 10px;
+    font-size: 0px;
+}
+
+.separation3::before {
+
+    position: absolute;
+    content: "";
+    border: 4px solid white;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #5dadd3;
+    top: -11px;
+    left: 42%;
+    z-index: 10;
+
+}
+
+/* css section contact *******************/
+
+.contact {
+
+    margin-top: 25px;
+    width: 100%;
+
+}
+
+/**** contient la carte ********/
+
+.carte {
+
+    position: relative;
+    height: 900px;
+
+}
+
+.deuximages {
+
+    position: relative;
+    height: 900px;
+
+}
+
+iframe {
+
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+
+}
+.backbleu {
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #5dadd3;
+    opacity: 0;
+
+}
+
+.backbleu:hover {
+
+    opacity: 0.4;
+
+}
+
+/****** contient le formulaire *******/
+
+.formulaire {
+
+    position: absolute;
+    right: 10%;
+    top: 60px;
+    z-index: 10;
+
+}
+
+form {
+    
+    width: 300px;
+    padding: 25px;
+    background-color: rgba(234, 234, 234, 0.82);
+  }
+  
+  
+form input, form textarea, form h4, form h5, form p {
+    
+    width: 250px;
+
+  }
+
+form input, form textarea {
+
+    background-color: white;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+
+  }
+
+form h4, form h5, form p {
+
+    text-align: start;
+    padding-left: 20px;
+    color: black;
+
+  }
+
+form h4 {
+
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    font-weight: bold;
+
+  }
+
+form p {
+    
+    font-size: 16px;
+    padding-top: 5px;
+
+}
+
+form p:last-child {
+
+    padding-bottom: 20px;
+
+}
+  
+input:focus, textarea:focus {
+    
+    border-color: #000;
+  }
+  
+form textarea {
+
+    height: 125px;
+
+  }
+  
+form input {
+
+    height: 25px;
+
+  }
+
+/*** bouton du formulaire ******/
+  
+.button {
+    
+    text-align: start;
+    padding-left: 25px;
+
+  }
+  
+button {
+
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    background-color: #5dadd3;
+    box-shadow: 0px 2px 1px #468cad;
+
+  }
+
+/* css footer *******************/
+
+.fin {
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/************   Les medias queries ***********/
+
+@media screen and (min-width: 2500px) {
+    
+    nav {
+
+        height: 200px;
+    
+    }
+
+    .container {
+
+        height: 200px;
+    
+    }
+
+    .item a {
+
+        font-size: 38px;
+    
+    }
+
+    .items .item {
+
+        border-top: 8px solid #11ffee00;
+        
+    }
+    
+    
+    .items .item:hover {
+    
+        border-top: 8px solid #5dadd3;
+    
+    }
+
+    .slider {
+        padding-top: 200px;
+    }
+    
+    .slides {
+
+        height: 1450px;
+
+    }
+
+
+    .slogan h1 {
+
+        margin-bottom: 25px;
+        font-size: 64px;
+    
+    }
+    
+    .slogan p {
+    
+        margin-bottom: 40px;
+        font-size: 32px;
+    
+    }
+    
+    
+    .slogan a {
+    
+        padding: 15px;
+        font-size: 40px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px #4594bb;
+    
+    }
+
+    .pre, .next {
+        
+        height: 140px;
+        font-size: 60px;
+    }
+
+    h2 {
+        
+        font-size: 60px;
+    }
+
+    .sstitre p {
+        
+        font-size: 45px;
+    }
+
+    .separation hr {
+
+        border-bottom: 4px solid #e0e0e0;
+    
+    }
+
+    .separation2 {
+        
+        height: 18px;
+    }
+
+    .separation2 .bleu {
+
+        top: 10px;
+        right: 10px;
+    }
+
+    .blanc {
+        
+        width: 40px;
+        height: 40px;
+    }
+
+    .bleu {
+        
+        width: 20px;
+        height: 20px;
+
+    }
+
+    .imagefont .bleu {
+
+        left: 10px;
+        top: 10px;
+    
+    }
+    
+    .imagefont .blanc {
+    
+        left: 85px;
+        top: 30px;
+    
+    }
+    
+    
+    .font {
+    
+        left: 0px;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #e0e0e0;
+        font-size: 40px;
+        padding: 30px;
+    
+    }
+    
+    .textserv {
+    
+        width: 70%;
+        padding-bottom: 40px;
+        margin-left: 200px;
+    
+    }
+    
+    .textserv h3 {
+    
+        font-size: 60px;
+    
+    }
+    
+    .textserv p {
+
+        font-size: 40px;
+    }
+
+    .menuport li:first-child {
+
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    
+    }
+    
+    .menuport li:last-child {
+    
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    
+    }
+
+    .menuport li {
+
+        width: 212px;
+
+    }
+
+    .menuport h3 {
+
+        font-size: 40px;
+        padding: 14px;
+
+    }
+
+    #allworks:checked ~ * .checkall i, #creative:checked ~ * .checkcrt i, #corporate:checked ~ * .checkcrp i, #portfoliom:checked ~ * .checkptf i {
+
+        font-size: 45px;
+        bottom: -45px;
+    
+    }
+    
+    
+    .creat, .portf, .corp {
+    
+        position: relative;
+        width: 100%;
+        height: 530px;
+        
+    }
+
+    .imageport {
+
+        margin: 10px;
+
+    }
+
+    .comment {
+
+        height: 100px;
+
+    }
+
+    .comment h4 {
+
+        font-size: 52px;
+
+    }
+
+    .comment p {
+
+        font-size: 42px;
+
+    }
+
+    .eye {
+        
+        width: 40px;
+        height: 40px;
+        padding: 24px;
+        border: 4px solid white;
+        top: -40px;
+
+    }
+
+    .eye i {
+
+        font-size: 32px;
+
+    }
+
+    .formulaire {
+        
+        right: 35%;
+        top: 130px;
+
+    }
+
+    .fix {
+
+        height: 100px;
+    }
+    
+    .separation3 {
+        
+        border-top: 4px solid #e0e0e0;
+        height: 20px;
+    }
+    
+    .separation3::before {
+    
+        border: 8px solid white;
+        width: 24px;
+        height: 24px;
+        top: -20px;
+        left: 46%;
+    
+    }
+
+
+    
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2500px) {
+    
+    
+
+    .slides {
+
+        height: 850px;
+
+    }
+
+    
+    
+    .creat, .portf, .corp {
+    
+        position: relative;
+        width: 100%;
+        height: 400px;
+        
+    }
+
+
+    
+}
+
+@media screen and (min-width: 1700px) and (max-width: 2000px) {
+    
+    .slides {
+
+        height: 750px;
+
+    }
+
+    
+    
+    .creat, .portf, .corp {
+    
+        position: relative;
+        width: 100%;
+        height: 300px;
+        
+    
+    }
+
+    .separation3::before {
+        
+        left: 44%;
+
+    }
+
+    .pre, .next {
+        
+        height: 80px;
+    }
+
+    
+}
+
+
+@media screen and (min-width: 1500px) and (max-width: 1700px) {
+    
+    .slides {
+
+        height: 650px;
+
+    }
+
+    
+    .creat, .portf, .corp {
+    
+        position: relative;
+        width: 100%;
+        height: 250px;
+        
+    
+    }
+
+    .separation3::before {
+        
+        left: 43%;
+
+    }
+}
+
+@media screen and (max-width: 1250px) {
+
+    .slides {
+
+        height: 450px;
+
+    }
+
+
+    .slogan h1 {
+
+        font-size: 18px;
+
+    }
+    .slogan p {
+
+        width: 50%;
+
+    }
+
+    .slogan a {
+
+        padding: 12px;
+        font-size: 15px;
+
+    }
+
+    .pre, .next {
+        
+        font-size: 30px;
+        height: 60px;
+    }
+
+
+    .presentation {
+
+        flex-direction: column;
+        
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+
+    .sstitre p {
+
+        font-size: 12px;
+    }
+
+
+    .preim {
+
+        width: 100%;
+    
+    }
+
+    .listeserv {
+
+        
+        width: 100%;
+        margin-top: 15px;
+    
+    }
+
+    .textserv p {
+    
+        font-size: 12px;
+
+    }
+
+    .textserv h3 {
+        font-size: 18px;
+    }
+
+    .logoserv {
+
+        width: 40%;
+    
+    
+    }
+
+    .imagefont .bleu {
+
+        left: 5px;
+        top: 5px;
+    
+    }
+    
+    .imagefont .blanc {
+    
+        left: 103px;
+        top: 11px;
+    
+    }
+
+    .font {
+
+        left: 18%;
+        width: 15px;
+        height: 15px;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .textserv {
+
+        margin-left: 180px;
+    }
+
+    form {
+    
+        width: 250px;
+        padding: 10px;
+        background-color: rgba(234, 234, 234, 0.82);
+      }
+      
+      
+    form input, form textarea, form h4, form h5, form p {
+        
+        width: 200px;
+    
+      }
+
+      form h4, form h5, form p {
+
+        text-align: start;
+        padding-left: 20px;
+        color: black;
+    
+      }
+    
+    form h4 {
+    
+        font-size: 15px;
+        padding-top: 15px;
+        padding-bottom: 5px;
+        font-weight: bold;
+    
+      }
+    
+    form p {
+        
+        font-size: 12px;
+        padding-top: 5px;
+    
+    }
+    
+    form p:last-child {
+    
+        padding-bottom: 20px;
+    
+    }
+      
+    input:focus, textarea:focus {
+        
+        border-color: #000;
+      }
+      
+    form textarea {
+    
+        height: 100px;
+    
+      }
+      
+    form input {
+    
+        height: 20px;
+        font-size: 12px;
+    
+    }
+
+    .formulaire {
+
+        position: absolute;
+        right: 3%;
+        top: 22px;    
+    
+    }
+
+    button {
+
+        padding: 8px;
+        font-size: 12px;
+    
+    }
+
+    .separation3::before {
+        
+        left: 41%;
+
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+
+    .slides {
+
+        height: 350px;
+
+    }
+
+    .slide {
+
+        top: 10px;
+
+    }
+
+    .container {
+
+        flex-direction: column;
+        
+    }
+
+    .logo {
+
+        height: 60%;
+        align-self: center;
+
+    }
+
+    .items {
+
+        height: 40%;
+        justify-content: center;
+
+    }
+
+    .items a {
+
+        font-size: 15px;
+        
+    }
+
+    .pre, .next {
+        
+        font-size: 25px;
+        height: 50px;
+        padding-top: 3%;
+    }
+
+    .slogan {
+
+        top: 50px;
+        left: 70px;
+        
+    }
+
+    .imagefont .blanc {
+
+        left: 85px;
+        top: 11px;
+    }
+
+    .menuport h3 {
+
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .menuport li {
+
+        width: 80px;
+    
+    }
+    
+    .imageport {
+
+        width: 30%;
+    }
+
+    .separation3::before {
+        
+        left: 39%;
+
+    }
+        
+    
+    
+}
+
+@media screen and (max-width: 670px) {
+
+    .slides {
+
+        height: 450px;
+
+    }
+
+
+    .slogan {
+
+        top: 250px;
+        left: 70px;
+        text-shadow: 1px 1px 2px #4594bb;
+        
+    }
+
+
+
+    .pre, .next {
+        
+        font-size: 20px;
+        height: 40px;
+    }
+    
+
+    .imageport {
+
+        width: 40%;
+    }
+    
+
+    .separation3::before {
+        
+        left: 38%;
+
+    }
+
+    
+
+    .formulaire {
+        
+        top: 110px;
+        right: 2%;
+    }
+
+    form {
+
+        width: 220px;
+        padding: 0px;
+        background-color: rgba(234, 234, 234, 0.72);
+
+    }
+
+    form input, form textarea, form h4, form h5, form p {
+        width: 180px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .imagefont .blanc {
+    
+        left: 75px;
+        top: 11px;
+    
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+
+
+    
+
+    
+    
+    
+    .pre, .next {
+    
+        width: 4%;
+        height: 25px;
+        padding-top: 2%;
+        font-size: 15px;
+    
+    }
+
+   .items a {
+
+        font-size: 12px;
+       
+        
+    }
+
+    .textserv {
+        margin-left: 120px;
+    }
+    
+    .imagefont .blanc {
+    
+        left: 70px;
+        top: 11px;
+    
+    }
+
+    .separation2 hr {
+
+        width: 30%;
+    }
+
+    .fix {
+
+        width: 30%;
+        margin-left: 35%;
+
+    }
+
+    .separation3::before {
+        
+        left: 43%;
+
+    }
+
+    .sstitre p {
+
+        width: 50%;
+    }
+
+    
+    .creat, .portf, .corp {
+
+        height: 160px;
+
+    }
+
+    .comment {
+
+        height: 30px;
+        font-size: 12px;
+        
+    }
+    
+    .eye {
+
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+    }
+
+
+
+    form {
+
+        width: 210px;
+        padding: 0px;
+        background-color: rgba(234, 234, 234, 1);
+
+    }
+
+    form input, form textarea, form h4, form h5, form p {
+        width: 180px;
+    }
+
+    .button {
+        
+        padding-left: 10px;
+    }
+
+    button {
+        padding: 7px;
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 550px) {
+
+    .slogan {
+
+        top: 200px;
+
+    }
+    
+    .carte {
+
+        height: 1280px;
+
+    }
+
+    .formulaire {
+        
+        top: 920px;
+        right: 30%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .imagefont .blanc {
+    
+        left: 60px;
+        top: 11px;
+    
+    }
+
+    .menuport li {
+
+        width: 90px;
+    
+    }
+
+    .formulaire {
+
+        right: 23%;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    body {
+
+        padding-left: 7px;
+        padding-right: 7px; 
+
+    }
+
+    nav {
+
+        left: 7px;
+        width: calc(100% - 14px);
+
+    }
+
+
+    .slogan {
+
+        top: 150px;
+        left: 50px;
+        width: 75%;
+    
+    }
+    
+
+    
+    
+    
+    .pre, .next {
+    
+        width: 4%;
+        height: 25px;
+        padding-top: 3%;
+        font-size: 13px;
+    
+    }
+
+    h2 {
+
+        font-size: 20px;
+
+    }
+
+   .items a {
+
+        font-size: 11px;
+       
+        
+    }
+
+    
+    .imagefont .blanc {
+    
+        left: 56px;
+        top: 11px;
+    
+    }
+
+    .menuport li {
+
+        width: 85px;
+    
+    }
+
+    .separation3::before {
+
+        left: 40%;
+    }
+
+    .sstitre p {
+
+        width: 60%;
+    }
+
+    .textserv {
+
+        width: 60%;
+        margin-left: 100px;
+    }
+
+    .imageport {
+
+        width: 50%;
+    }
+    
+    .creat, .portf, .corp {
+
+        height: 130px;
+        
+    }
+
+    .formulaire {
+        
+        right: 22%;
+    }
+    .fin {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+}
+
+
+@media screen and (max-width: 350px) {
+
+    .formulaire {
+
+        right: 15%;
+    }
+
+    .menuport li {
+
+        width: 75px;
+    }
+
+    .menuport h3 {
+        
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 300px) {
+
+
+
+    .imagefont .blanc {
+        left: 50px;
+        top: 11px;
+    }
+
+    .creat, .portf, .corp {
+
+        height: 110px;
+
+    }
+
+    .menuport h3 {
+
+        font-size: 9px;
+        padding: 5px;
+    
+    }
+
+    .menuport li {
+
+        width: 62px;
+    
+    }
+
+    #allworks:checked ~ * .checkall i, #creative:checked ~ * .checkcrt i, #corporate:checked ~ * .checkcrp i, #portfoliom:checked ~ * .checkptf i {
+
+        font-size: 18px;
+        right: 40%;
+        bottom: -21px;
+    
+    
+    }
+
+    .comment {
+
+        height: 25px;
+        font-size: 10px;
+        height: 25px;
+        
+    }
+    
+    .eye {
+
+        width: 12px;
+        height: 12px;
+        padding: 8px;
+        top: -15px;
+    }
+
+    .formulaire {
+        
+        right: 9%;
+    }
+}
+
+@media screen and (max-width: 260px) {
+
+    .logo {
+        width: auto;
+    }
+
+    .menuport li {
+
+        width: 55px;
+    
+    }
+
+    .menuport h3 {
+
+        font-size: 9px;
+        padding: 6px;
+    }
+
+
+    .imagefont .blanc {
+        left: 50px;
+        top: 11px;
+    }
+
+    .formulaire {
+        right: 3%;
+    }
+
+}
