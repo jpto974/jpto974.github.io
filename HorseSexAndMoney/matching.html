@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSAM</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+
+    <!-- div prennant la taille maximal du site -->
+    <div class="max">
+
+        <!-- header comportant la barre de navigation -->
+        <header>
+
+            <nav>
+
+                <div class="logo">
+                    <a href="index.html" id="imglog"><img src="img/logo.svg" alt="Le logo de HSAM"></a>
+                    <a href="index.html" id="textlog"><h1>HSAM</h1></a>
+                </div>
+
+                
+                <input type="radio" name="menunav" id="accueil">
+                <input type="radio" name="menunav" id="matching" checked>
+                <input type="radio" name="menunav" id="inscription">
+
+                <div class="menu">
+
+                    <ul>
+                        <li class="">
+                            <h2 class="">
+                                <label for="accueil" class="checkacc">
+                                    <a href="index.html">ACCUEIL</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        <li class="">
+                            <h2 class="">
+                                <label for="matching" class="checkmat">
+                                    <a href="matching.html">MATCHING</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        <li class="">
+                            
+                            
+                            <h2 class="">
+                                <label for="inscription" class="checkins">
+                                    <a href="inscription.html">INSCRIPTION</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </nav>
+
+        </header>
+
+        <!-- section contenant la connexion -->
+        <section class="connexion">
+            <!-- pas de h1 -->
+            <!-- le formulaire de connexion -->
+            <form action="" method="get" class="formcon">
+                
+                <div class="formconema">
+                  <label for="email">Email : </label>
+                  <input type="email" name="email" id="email" autocomplete="off" required>
+                </div>
+                
+                <div class="formconpas">
+                    <label for="password">Mot de Passe : </label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                </div>
+                
+                <div class="formconrad">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Se souvenir de moi</label>
+                </div>
+
+                <div class="formconsub">
+                  <input type="submit" value="Valider">
+                </div>
+            </form>
+
+        </section>
+
+        <!-- section matching -->
+        <section class="secmat">
+
+            <h3>BLACKKING</h3>
+
+            <div class="containermat">
+
+                <div class="matim">
+                    <img src="img/blackking.jpg" alt="Blacking le pur sang noir">
+                </div>
+
+                <div class="matdes">
+                    <h4>Nom : BlackKing</h4>
+                    <p>Sexe : Etalon</p>
+                    <p>Poids : 800 Kg</p>
+                    <p>Taille : 2.4 m</p>
+                    <p>Race : Pur-Sang</p>
+                </div>
+
+                <div class="matval">
+
+                    <form class="formmat">
+                        <div class="formmatsub">
+                            <input type="submit" value="En savoir plus">
+                            <input type="submit" value="Faire une proposition">
+                            <input type="submit" value="Ne plus voir">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="secmat">
+
+            <h3>BELLEAUTOMNE</h3>
+
+            <div class="containermat">
+
+                <div class="matim">
+                    <img src="img/belleautomne.jpg" alt="Belleautomne une magnifique jument marron">
+                </div>
+
+                <div class="matdes">
+                    <h4>Nom : BelleAutomne</h4>
+                    <p>Sexe : Jument</p>
+                    <p>Poids : 750 Kg</p>
+                    <p>Taille : 2.3 m</p>
+                    <p>Race : Pur-Sang</p>
+                </div>
+
+                <div class="matval">
+
+                    <form class="formmat">
+                        <div class="formmatsub">
+                            <input type="submit" value="En savoir plus">
+                            <input type="submit" value="Faire une proposition">
+                            <input type="submit" value="Ne plus voir">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- le footer -->
+        <footer>
+            <h5>HorseSexAndMoney - le tinder équestre</h5>
+        </footer>
+
+
+    </div>
+</body>
+</html>
