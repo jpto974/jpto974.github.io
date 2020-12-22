@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSAM</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+
+    <!-- div prennant la taille maximal du site -->
+    <div class="max">
+
+        <!-- header comportant la barre de navigation -->
+        <header>
+
+            <nav>
+
+                <div class="logo">
+                    <a href="index.html" id="imglog"><img src="img/logo.svg" alt="Le logo de HSAM"></a>
+                    <a href="index.html" id="textlog"><h1>HSAM</h1></a>
+                </div>
+
+                
+                <input type="radio" name="menunav" id="accueil">
+                <input type="radio" name="menunav" id="matching">
+                <input type="radio" name="menunav" id="inscription" checked>
+
+                <div class="menu">
+
+                    <ul>
+                        <li class="">
+                            <h2 class="">
+                                <label for="accueil" class="checkacc">
+                                    <a href="index.html">ACCUEIL</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        <li class="">
+                            <h2 class="">
+                                <label for="matching" class="checkmat">
+                                    <a href="matching.html">MATCHING</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        <li class="">
+                            
+                            
+                            <h2 class="">
+                                <label for="inscription" class="checkins">
+                                    <a href="inscription.html">INSCRIPTION</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </nav>
+
+        </header>
+
+        <!-- section contenant la connexion -->
+        <section class="connexion">
+            <!-- pas de h1 -->
+            <!-- le formulaire de connexion -->
+            <form action="" method="get" class="formcon">
+                
+                <div class="formconema">
+                  <label for="email">Email : </label>
+                  <input type="email" name="email" id="email" autocomplete="off" required>
+                </div>
+                
+                <div class="formconpas">
+                    <label for="password">Mot de Passe : </label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                </div>
+                
+                <div class="formconrad">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Se souvenir de moi</label>
+                </div>
+
+                <div class="formconsub">
+                  <input type="submit" value="Valider">
+                </div>
+            </form>
+
+        </section>
+
+        <!-- sectin inscription -->
+        <section class="secins">
+            
+        <h3>HorseSexAndMoney - le tinder équestre</h3>
+
+            <!-- le formulaire d'inscription -->
+            <form action="" method="get" class="formins">
+                
+                <div class="partins">
+
+                    <div class="forminsnom">
+                    <label for="nom">Nom : </label>
+                    <input type="text" name="nom" id="nom" autocomplete="off" required>
+                    </div>
+
+                    <div class="forminspre">
+                        <label for="prenom">Prénom : </label>
+                        <input type="text" name="prenom" id="prenom" autocomplete="off" required>
+                    </div>
+
+                    <div class="forminsdate">
+                        <label for="date">Date de naissance : </label>
+                        <input type="date" name="date" id="date" autocomplete="off" required>
+                    </div>
+                    
+                    <div class="forminsema">
+                        <label for="emailins">Email : </label>
+                        <input type="email" name="email" id="emailins" autocomplete="off" required>
+                    </div>
+                    
+                    <div class="forminspro">
+                        <p id="type">Type de profile : </p>
+                        <input type="checkbox" name="checkbox" id="checkboxa">
+                        <label for="checkboxa">Acheteur</label>
+                        <p id="ou"> ou </p>
+                        <input type="checkbox" name="checkbox" id="checkboxv">
+                        <label for="checkboxv">Vendeur</label>
+                    </div>
+
+                    <div class="forminscod">
+                        <label for="code">Code postal : </label>
+                        <input type="text" name="code" id="code" autocomplete="off" required>
+                    </div>
+
+                </div>
+
+                <div class="partcom" id="idpartcom">
+                    <h4>Comment avez-vous découvert notre site ? </h4>
+                    <div class="forminsg">
+                        <input type="radio" name="radio" id="radiog">
+                        <label for="radiog">Par Google.</label>
+                    </div>
+
+                    <div class="forminsf">
+                        <input type="radio" name="radio" id="radiof">
+                        <label for="radiof">Par votre Facebook.</label>
+                    </div>
+
+                    <div class="forminsh">
+                        <input type="radio" name="radio" id="radioh">
+                        <label for="radioh">Je suis passé par là, j'ai vu de la lumière.</label>
+                    </div>
+
+                    <div class="forminsl">
+                        <input type="radio" name="radio" id="radiol">
+                        <label for="radiol">Par le bouche à oreille.</label>
+                    </div>
+
+                </div>
+
+                <div class="partval">
+                    <div class="forminssub">
+                    <input type="submit" value="Envoyez">
+                    </div>
+                </div>
+
+            </form>
+
+        </section>
+        <!-- le footer -->
+        <footer>
+            <h5>HorseSexAndMoney - le tinder équestre</h5>
+        </footer>
+
+
+    </div>
+</body>
+</html>

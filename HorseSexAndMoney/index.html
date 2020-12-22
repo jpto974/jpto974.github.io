@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSAM</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+
+    <!-- div prennant la taille maximal du site -->
+    <div class="max">
+
+        <!-- header comportant la barre de navigation -->
+        <header>
+
+            <nav>
+
+                <div class="logo">
+                    <a href="index.html" id="imglog"><img src="img/logo.svg" alt="Le logo de HSAM"></a>
+                    <a href="index.html" id="textlog"><h1>HSAM</h1></a>
+                </div>
+
+                
+                <input type="radio" name="menunav" id="accueil" checked>
+                <input type="radio" name="menunav" id="matching">
+                <input type="radio" name="menunav" id="inscription">
+
+                <div class="menu">
+
+                    <ul>
+                        <li class="">
+                            <h2 class="">
+                                <label for="accueil" class="checkacc">
+                                    <a href="index.html">ACCUEIL</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        <li class="">
+                            <h2 class="">
+                                <label for="matching" class="checkmat">
+                                    <a href="matching.html">MATCHING</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        <li class="">
+                            
+                            
+                            <h2 class="">
+                                <label for="inscription" class="checkins">
+                                    <a href="inscription.html">INSCRIPTION</a><i class="fas fa-caret-down"></i>
+                                </label>
+                            </h2>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </nav>
+
+        </header>
+
+        <!-- section contenant la connexion -->
+        <section class="connexion">
+            <!-- pas de h1 -->
+            <!-- le formulaire de connexion -->
+            <form action="" method="get" class="formcon">
+                
+                <div class="formconema">
+                  <label for="email">Email : </label>
+                  <input type="email" name="email" id="email" autocomplete="off" required>
+                </div>
+                
+                <div class="formconpas">
+                    <label for="password">Mot de Passe : </label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                </div>
+                
+                <div class="formconrad">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Se souvenir de moi</label>
+                </div>
+
+                <div class="formconsub">
+                  <input type="submit" value="Valider">
+                </div>
+            </form>
+
+        </section>
+
+        <!-- section contenant la grande image et le slogan -->
+        <section class="slogan">
+
+                    <div class="textslogan">
+                        <h3>HorseSexAndMoney - le tinder équestre</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam optio officia ipsa recusandae ratione, provident explicabo eum quas aliquid, fugit eius?</p>
+                    </div>
+
+                     <div class="grandeim" id="grimg">
+                        <img src="img/photo1.jpg" alt="Cavaliere sur son cheval au bort d'une plage">
+                    </div>
+
+        </section>
+
+        <div class="separateur"></div>
+
+        <!-- section contenant les résumé des 9 derniers articles -->
+        <section class="article">
+
+            <h3>Nos Derners Articles</h3>
+
+            <div class="ensextrait">
+
+                <div class="extrait">
+                    <h4>Titre</h4>
+                    <div class="cadre">
+                        <div class="cadim">
+                            <img src="img/cheval1.jpg" alt="Un cheval 1">
+                        </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="extrait">
+                    <h4>Titre</h4>
+                    <div class="cadre">
+                        <div class="cadim">
+                            <img src="img/cheval2.jpg" alt="Un cheval 2">
+                        </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="extrait">
+                    <h4>Titre</h4>
+                    <div class="cadre">
+                        <div class="cadim">
+                            <img src="img/cheval3.jpg" alt="Un cheval 3">
+                        </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="extrait">
+                    <h4>Titre</h4>
+                    <div class="cadre">
+                        <div class="cadim">
+                            <img src="img/cheval12.jpg" alt="Un cheval 12">
+                        </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="extrait">
+                    <h4>Titre</h4>
+                    <div class="cadre">
+                        <div class="cadim">
+                            <img src="img/cheval8.jpg" alt="Un cheval 8">
+                        </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="extrait">
+                    <h4>Titre</h4>
+                    <div class="cadre">
+                        <div class="cadim">
+                            <img src="img/cheval6.jpg" alt="Un cheval 6">
+                        </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="extrait">
+                        <h4>Titre</h4>
+                        <div class="cadre">
+                            <div class="cadim">
+                                <img src="img/cheval7.jpg" alt="Un cheval 7">
+                            </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="extrait">
+                        <h4>Titre</h4>
+                        <div class="cadre">
+                            <div class="cadim">
+                                    <img src="img/cheval10.jpg" alt="Un cheval 10">
+                            </div>
+                            <div class="text">
+                                    <h5>Sous titre</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                            </div>
+                        </div>
+                    </div>
+                <div class="extrait">
+                    <h4>Titre</h4>
+                    <div class="cadre">
+                        <div class="cadim">
+                            <img src="img/cheval13.jpg" alt="Un cheval 13">
+                        </div>
+                        <div class="text">
+                            <h5>Sous titre</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit aliquid. <a href="#"> (...) </a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- le footer -->
+        <footer>
+            <h5>HorseSexAndMoney - le tinder équestre</h5>
+        </footer>
+
+
+    </div>
+</body>
+</html>
