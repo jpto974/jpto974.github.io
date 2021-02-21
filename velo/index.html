@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Application velo libre</title>
+</head>
+<body>
+    <div class="container-app">
+
+        <div class="slider">
+
+            <div class="cont-slide-img">
+    
+                <img src="imgs/img1.jpg" alt="premiere image" class="active">
+                <img src="imgs/img2.jpg" alt="seconde image">
+                <img src="imgs/img3.jpg" alt="troisieme image">
+                <img src="imgs/img4.jpg" alt="quatrieme image">
+                <img src="imgs/img5.jpg" alt="cinquieme image">
+    
+            </div>
+
+            <div class="cont-slide-info">
+    
+                <span class="active"><strong>Bienvenu sur AVL</strong> - Une application vous permettant de réserver votre vélo urbain.</span>
+                <span>1 - <b>Choisissez votre ville!</b> Une fois la carte affichée, <b>choisissez votre station</b>.</span>
+                <span>2 - Le formulaire apparaît, <b>renseignez votre nom et votre prénom puis réservez</b>.</span>
+                <span>3 - <b>Vous avez 20 minutes pour récupérer votre vélo</b>. Sinon la réservation sera <b>annulée</b>.</span>
+                <span>4 - Si vous refaites une <b>autre réservation la précédente sera annulée</b>. La <b>fermeture</b> de l'appli <b>annule aussi la réservation</b>.</span>
+    
+            </div>
+    
+            <div class="commandes">
+    
+                <button class="left">
+    
+                    <img src="imgs/left.svg" alt="bouton de gauche">
+    
+                </button>
+    
+                <button class="right">
+    
+                    <img src="imgs/right.svg" alt="bouton de droite">
+    
+                </button>
+    
+            </div>
+    
+            <div class="cercles">
+    
+                <div data-clic="1" class="cercle active-cercle"></div>
+                <div data-clic="2" class="cercle"></div>
+                <div data-clic="3" class="cercle"></div>
+                <div data-clic="4" class="cercle"></div>
+                <div data-clic="5" class="cercle"></div>
+    
+            </div>
+    
+        </div>
+
+        <div class="choix">
+            <label for="ville-select">Choisissez votre ville:</label>
+
+            <select name="la-ville" id="ville-select"></select>
+
+        </div>
+        <div class="place-carte mapclass seul"><!--seul-->
+
+            <div class="div-carte">
+                
+                <div id="mapid" class="map-seul"></div><!--map-seul-->
+                
+            </div>
+
+            <div id="place-loader" class="cache">
+
+                <div id="loader"></div>
+                
+            </div>
+
+        </div>
+        <div class="formulaire cache"><!--cache-->
+
+            <form>
+
+                <p id="info-adresse"></p>
+                <p id="info-place"></p>
+                <p id="info-velo"></p>
+
+                <label for="nom" class="text-nom"></label>
+                <input type="text" id="nom" maxlength="15" autocomplete="off">
+
+                <label for="prenom" class="text-prenom"></label>
+                <input type="text" id="prenom" maxlength="15" autocomplete="off">
+
+                <button type="submit" id="res">Réserver</button>
+
+            </form>
+
+            <canvas id="canvas-title" class="cache"></canvas><!--cache-->
+
+            <canvas id="canvasid" class="cache"></canvas><!--cache-->
+
+            <canvas id="canvas-signature" class="cache"></canvas>
+            
+            <div class="stylo">
+                <img id="source" src="./imgs/pencil.png">
+            </div>
+
+        </div>
+        <div class="info"></div>
+    </div>
+
+    <script src="js/app.ems.js" type="module" defer></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+</body>
+</html>
