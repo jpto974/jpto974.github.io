@@ -49,9 +49,13 @@ class classSlider {
 
     //gestion du slider avec les touches
 
-    keyPressed(event){
+/*    keyPressed(event){
 
-        let index = indexImageActive()
+        event.preventDefault()
+
+        console.log(this)
+
+        let index = this.indexImageActive()
 
         if(event.keyCode !== 37 && event.keyCode !== 39 ) return
 
@@ -88,7 +92,7 @@ class classSlider {
             }
         }
 
-    }
+    }*/
 
     // gestion du slider avec les cercles
     clickCercle(elm){

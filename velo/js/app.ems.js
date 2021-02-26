@@ -594,9 +594,101 @@ slider.addEventListener('click', (elm) => {
     
 })
 
+    //gestion du slider avec les touches
+
+function leSliderKeyPressed(event){
+
+        event.preventDefault()
+
+        //console.log(this)
+
+        let index = leSlider.indexImageActive()
+
+        if(event.keyCode !== 37 && event.keyCode !== 39 ) return
+
+        leSlider.images[index].classList.remove('active')
+        leSlider.cercles[index].classList.remove('active-cercle')
+
+        if(event.keyCode === 37){
+
+            if(index === 0){
+
+                leSlider.images[leSlider.nbImg - 1].classList.add('active')
+                leSlider.cercles[leSlider.nbImg - 1].classList.add('active-cercle')
+
+            }else{
+
+                leSlider.images[index - 1].classList.add('active')
+                leSlider.cercles[index - 1].classList.add('active-cercle')
+
+            }
+
+        }else if(event.keyCode === 39){
+            
+            if(index === leSlider.nbImg - 1){
+
+                leSlider.images[0].classList.add('active')
+                leSlider.cercles[0].classList.add('active-cercle')
+
+
+            }else{
+
+                leSlider.images[index + 1].classList.add('active')
+                leSlider.cercles[index + 1].classList.add('active-cercle')
+
+            }
+        }
+
+    }
+
+    function lesInfosKeyPressed(event){
+
+        event.preventDefault()
+
+        //console.log(this)
+
+        let index = lesInfos.indexImageActive()
+
+        if(event.keyCode !== 37 && event.keyCode !== 39 ) return
+
+        lesInfos.images[index].classList.remove('active')
+        lesInfos.cercles[index].classList.remove('active-cercle')
+
+        if(event.keyCode === 37){
+
+            if(index === 0){
+
+                lesInfos.images[lesInfos.nbImg - 1].classList.add('active')
+                lesInfos.cercles[lesInfos.nbImg - 1].classList.add('active-cercle')
+
+            }else{
+
+                lesInfos.images[index - 1].classList.add('active')
+                lesInfos.cercles[index - 1].classList.add('active-cercle')
+
+            }
+
+        }else if(event.keyCode === 39){
+            
+            if(index === lesInfos.nbImg - 1){
+
+                lesInfos.images[0].classList.add('active')
+                lesInfos.cercles[0].classList.add('active-cercle')
+
+
+            }else{
+
+                lesInfos.images[index + 1].classList.add('active')
+                lesInfos.cercles[index + 1].classList.add('active-cercle')
+
+            }
+        }
+
+    }
+
 // gestion du slider avec les touches
-document.addEventListener('keydown', leSlider.keyPressed)
-document.addEventListener('keydown', lesInfos.keyPressed)
+document.addEventListener('keydown', leSliderKeyPressed)
+document.addEventListener('keydown', lesInfosKeyPressed)
 
 
 //affichage info
