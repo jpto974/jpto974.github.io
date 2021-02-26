@@ -396,30 +396,6 @@ function appelAfficheVelo(){
 
 }
 
-
-//ecrire le nom
-
-nom.addEventListener('keyup', (lettre) => {
-
-    let text = lettre.target.value
-    nom.value = text
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    dessine(ctx)
-
-})
-
-//ecrire le prenom
-
-prenom.addEventListener('keyup', (lettre) => {
-
-    let text = lettre.target.value
-    prenom.value = text
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    dessine(ctx)
-
-
-})
-
 //fonction réservation
 
 function reservation(){
@@ -455,6 +431,28 @@ function reservation(){
     }
 
 }
+
+//ecrire le nom
+
+nom.addEventListener('keyup', (lettre) => {
+
+    let text = lettre.target.value
+    nom.value = text
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    dessine(ctx)
+
+})
+
+//ecrire le prenom
+
+prenom.addEventListener('keyup', (lettre) => {
+
+    let text = lettre.target.value
+    prenom.value = text
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    dessine(ctx)
+
+})
 
 //clique sur la réservation
 reserver.addEventListener('click', (event) => {
@@ -594,101 +592,112 @@ slider.addEventListener('click', (elm) => {
     
 })
 
-    //gestion du slider avec les touches
+//gestion du slider avec les touches
 
 function leSliderKeyPressed(event){
 
-        event.preventDefault()
-
-        //console.log(this)
-
-        let index = leSlider.indexImageActive()
-
-        if(event.keyCode !== 37 && event.keyCode !== 39 ) return
-
-        leSlider.images[index].classList.remove('active')
-        leSlider.cercles[index].classList.remove('active-cercle')
-
-        if(event.keyCode === 37){
-
-            if(index === 0){
-
-                leSlider.images[leSlider.nbImg - 1].classList.add('active')
-                leSlider.cercles[leSlider.nbImg - 1].classList.add('active-cercle')
-
-            }else{
-
-                leSlider.images[index - 1].classList.add('active')
-                leSlider.cercles[index - 1].classList.add('active-cercle')
-
-            }
-
-        }else if(event.keyCode === 39){
-            
-            if(index === leSlider.nbImg - 1){
-
-                leSlider.images[0].classList.add('active')
-                leSlider.cercles[0].classList.add('active-cercle')
+    event.preventDefault()
 
 
-            }else{
+    let index = leSlider.indexImageActive()
 
-                leSlider.images[index + 1].classList.add('active')
-                leSlider.cercles[index + 1].classList.add('active-cercle')
+    if(event.keyCode !== 37 && event.keyCode !== 39 ) return
 
-            }
-        }
+    if(idImgRot !== 0){
+
+        clearInterval(idImgRot)
+        idImgRot = 0
 
     }
 
-    function lesInfosKeyPressed(event){
+    leSlider.images[index].classList.remove('active')
+    leSlider.cercles[index].classList.remove('active-cercle')
 
-        event.preventDefault()
+    if(event.keyCode === 37){
 
-        //console.log(this)
+        if(index === 0){
 
-        let index = lesInfos.indexImageActive()
+            leSlider.images[leSlider.nbImg - 1].classList.add('active')
+            leSlider.cercles[leSlider.nbImg - 1].classList.add('active-cercle')
 
-        if(event.keyCode !== 37 && event.keyCode !== 39 ) return
+        }else{
 
-        lesInfos.images[index].classList.remove('active')
-        lesInfos.cercles[index].classList.remove('active-cercle')
+            leSlider.images[index - 1].classList.add('active')
+            leSlider.cercles[index - 1].classList.add('active-cercle')
 
-        if(event.keyCode === 37){
-
-            if(index === 0){
-
-                lesInfos.images[lesInfos.nbImg - 1].classList.add('active')
-                lesInfos.cercles[lesInfos.nbImg - 1].classList.add('active-cercle')
-
-            }else{
-
-                lesInfos.images[index - 1].classList.add('active')
-                lesInfos.cercles[index - 1].classList.add('active-cercle')
-
-            }
-
-        }else if(event.keyCode === 39){
-            
-            if(index === lesInfos.nbImg - 1){
-
-                lesInfos.images[0].classList.add('active')
-                lesInfos.cercles[0].classList.add('active-cercle')
-
-
-            }else{
-
-                lesInfos.images[index + 1].classList.add('active')
-                lesInfos.cercles[index + 1].classList.add('active-cercle')
-
-            }
         }
 
+    }else if(event.keyCode === 39){
+            
+        if(index === leSlider.nbImg - 1){
+
+            leSlider.images[0].classList.add('active')
+            leSlider.cercles[0].classList.add('active-cercle')
+
+
+        }else{
+
+            leSlider.images[index + 1].classList.add('active')
+            leSlider.cercles[index + 1].classList.add('active-cercle')
+
+        }
     }
+
+}
+
+function lesInfosKeyPressed(event){
+
+    event.preventDefault()
+
+    let index = lesInfos.indexImageActive()
+
+    if(event.keyCode !== 37 && event.keyCode !== 39 ) return
+
+    if(idImgRot !== 0){
+
+        clearInterval(idImgRot)
+        idImgRot = 0
+
+    }
+
+    lesInfos.images[index].classList.remove('active')
+    lesInfos.cercles[index].classList.remove('active-cercle')
+
+    if(event.keyCode === 37){
+
+        if(index === 0){
+
+            lesInfos.images[lesInfos.nbImg - 1].classList.add('active')
+            lesInfos.cercles[lesInfos.nbImg - 1].classList.add('active-cercle')
+
+        }else{
+
+            lesInfos.images[index - 1].classList.add('active')
+            lesInfos.cercles[index - 1].classList.add('active-cercle')
+
+        }
+
+    }else if(event.keyCode === 39){
+            
+        if(index === lesInfos.nbImg - 1){
+
+            lesInfos.images[0].classList.add('active')
+            lesInfos.cercles[0].classList.add('active-cercle')
+
+
+        }else{
+
+            lesInfos.images[index + 1].classList.add('active')
+            lesInfos.cercles[index + 1].classList.add('active-cercle')
+
+        }
+    }
+
+}
 
 // gestion du slider avec les touches
-document.addEventListener('keydown', leSliderKeyPressed)
-document.addEventListener('keydown', lesInfosKeyPressed)
+document.addEventListener('keyup', leSliderKeyPressed)
+document.addEventListener('keyup', lesInfosKeyPressed)
 
 
 //affichage info
