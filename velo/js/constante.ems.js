@@ -95,6 +95,50 @@ class stationVille {
 
     }
 
+    /*dessinSurCarte(mymap, color){
+
+        const redIcon = L.icon({
+            iconUrl: './imgs/marker_red.png',
+        
+            iconSize:     [40, 50], // size of the icon
+            iconAnchor:   [20, 0], // point of the icon which will correspond to marker's location
+            
+        })
+
+        const blueIcon = L.icon({
+            iconUrl: './imgs/marker_blue.png',
+        
+            iconSize:     [40, 50], // size of the icon
+            iconAnchor:   [20, 0], // point of the icon which will correspond to marker's location
+            
+        })
+
+        if(color === 'red'){
+
+            const marker = L.marker([this.lat, this.lng], {
+
+                bubblingMouseEvents: true,
+                icon: redIcon
+    
+            }).addTo(mymap)
+
+            tabMarker.push(marker)
+
+        }else{
+
+            const marker = L.marker([this.lat, this.lng], {
+
+                bubblingMouseEvents: true,
+                icon: blueIcon
+    
+            }).addTo(mymap)
+
+            tabMarker.push(marker)
+
+        }
+
+    }*/
+
     //fonction de récupération des infos utiles de la station 
     information(nameSt, add, stands, bikes){
 

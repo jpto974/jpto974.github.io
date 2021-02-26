@@ -73,7 +73,6 @@ const info = document.querySelector('.info')
 function dessine(ctx){
 
     const tailleX = canvas.width
-    console.log(tailleX)
     const positionRes = (tailleX - 75)/2
     ctx.font = '12px serif'
     ctx.fillStyle = "#333"
@@ -247,6 +246,7 @@ function dessinSigne(ctx3){
             signature.classList.add('cache')//cache de la signature
             carte.classList.add('map-seul')//la carte prend toute la place
             placeCarte.classList.add('seul')
+            mymap.invalidateSize()//nouvelle taille de la carte
             
             //storage
             leNom.set(nom.value)
@@ -274,6 +274,7 @@ function dessinSigne(ctx3){
             signature.classList.add('cache')//cache de la signature
             carte.classList.add('map-seul')//la carte prend toute la place
             placeCarte.classList.add('seul')
+            mymap.invalidateSize()//nouvelle taille de la carte
 
             //storage
             leNom.set(nom.value)
@@ -296,24 +297,11 @@ function dessinSigne(ctx3){
 
 }
 
-//affichage de la carte avec effet de chargement
-
-setTimeout(() => {
-
-    carte.classList.toggle('cache')
-    placeLoader.classList.toggle('cache')
-
-},2000)
-
-carte.classList.toggle('cache')
-placeLoader.classList.toggle('cache')
-
 //initialisation de la ville
 const selectVille = document.getElementById('ville-select')
 
 let indexVille = (indexVilleStorage.valeur === '')? 0 : parseInt(indexVilleStorage.valeur, 10)
 
-const mymap = L.map('mapid').setView([villes[indexVille].lat, villes[indexVille].long], 13)
 
 // initialisation des valeur de stockage velo et marker
 let valStation =[]
@@ -337,6 +325,7 @@ function appelAfficheVelo(){
 
             valStation[i] = new stationVille(station[i].name, station[i].address, station[i].position.latitude, station[i].position.longitude, station[i].totalStands.availabilities.stands, station[i].totalStands.availabilities.bikes)
 
+            //valStation[i].dessinSurCarte(mymap, 'blue')
             valStation[i].dessinSurCarte(mymap)
 
         }
@@ -345,11 +334,11 @@ function appelAfficheVelo(){
         function actionMark(){
 
             //affichage du canvas
-            canvas.classList.toggle('cache')//réapparition du canvas
-            canvasTitre.classList.toggle('cache')
-            placeCarte.classList.toggle('seul')
-            carte.classList.toggle('map-seul')
-            formulaire.classList.toggle('cache')
+            canvas.classList.remove('cache')//réapparition du canvas
+            canvasTitre.classList.remove('cache')
+            placeCarte.classList.remove('seul')
+            carte.classList.remove('map-seul')
+            formulaire.classList.remove('cache')
 
             canvas.width = formulaire.clientWidth
             canvas.height = formulaire.clientHeight
@@ -358,6 +347,9 @@ function appelAfficheVelo(){
             canvasTitre.width = canvasTitre.clientWidth
             canvasTitre.height = canvasTitre.clientHeight
             ctx2 = canvasTitre.getContext('2d')
+
+            //Initialisation de la nouvelle taille de la carte
+            mymap.invalidateSize()
 
             //récupération des données de la station en fonction du marker
             valStation.forEach(lieu => {
@@ -369,10 +361,13 @@ function appelAfficheVelo(){
                     infoAdresse.innerText = `${tabInfo[1].toLowerCase()}`
                     infoPlace.innerText = `${tabInfo[2]} place(s) libre(s)`
                     infoVelo.innerText = `${tabInfo[3]} vélo(s) disponible(s)`
-                    
+
                     //récupération du nom et du pénom stocké
                     nom.value = leNom.valeur
                     prenom.value = lePrenom.valeur
+
+                    //centrage de la carte
+                    mymap.setView([lieu.lat, lieu.lng], 13)
                     
                     //dessin du formulaire
                     dessine(ctx)
@@ -469,17 +464,6 @@ reserver.addEventListener('click', (event) => {
 
 })
 
-
-//creation de la carte
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: KEYMAP
-}).addTo(mymap)
-
 //création de la selection des villes
 for(let i=0; i<villes.length; i++){
 
@@ -500,30 +484,6 @@ for(let i=0; i<villes.length; i++){
 
 }
 
-//info ville et velo
-appelAfficheVelo()
-
-//si on change de ville
-selectVille.addEventListener('change', () => {
-
-    setTimeout(() => {
-
-        carte.classList.toggle('cache')
-        placeLoader.classList.toggle('cache')
-    
-    },2000)
-
-    indexVille = selectVille.selectedIndex
-    indexVilleStorage.set(indexVille.toString())
-    mymap.setView([villes[indexVille].lat, villes[indexVille].long], 13)
-    carte.classList.toggle('cache')
-    placeLoader.classList.toggle('cache')
-    
-    //info ville et velo
-    appelAfficheVelo()
-
-})
-
 
 // le slider
 
@@ -542,6 +502,12 @@ leSlider.commandes.forEach(commande => {
     commande.addEventListener('click', (com) => {
     
         com.preventDefault()
+        if(idImgRot !== 0){
+
+            clearInterval(idImgRot)
+            idImgRot = 0
+
+        }
         leSlider.clickCommande(com.target)
     
     })
@@ -553,6 +519,12 @@ lesInfos.commandes.forEach(commande => {
     commande.addEventListener('click', (com) => {
     
         com.preventDefault()
+        if(idImgRot !== 0){
+
+            clearInterval(idImgRot)
+            idImgRot = 0
+
+        }
         lesInfos.clickCommande(com.target)
     
     })
@@ -565,6 +537,12 @@ leSlider.cercles.forEach(cercle => {
     cercle.addEventListener('click', (elm) => {
     
         elm.preventDefault()
+        if(idImgRot !== 0){
+
+            clearInterval(idImgRot)
+            idImgRot = 0
+
+        }
         leSlider.clickCercle(elm.target)
     
     })
@@ -576,6 +554,12 @@ lesInfos.cercles.forEach(cercle => {
     cercle.addEventListener('click', (elm) => {
     
         elm.preventDefault()
+        if(idImgRot !== 0){
+
+            clearInterval(idImgRot)
+            idImgRot = 0
+
+        }
         lesInfos.clickCercle(elm.target)
     
     })
@@ -587,7 +571,7 @@ slider.addEventListener('click', (elm) => {
     
     elm.preventDefault()
 
-    if(idImgRot === 0){
+    if(idImgRot === 0 && !elm.target.classList.contains('left') && !elm.target.classList.contains('right') && !elm.target.classList.contains('cercle')){
 
         idImgRot = setInterval(() => {
 
@@ -598,8 +582,12 @@ slider.addEventListener('click', (elm) => {
 
     }else{
 
-        clearInterval(idImgRot)
-        idImgRot = 0
+        if(idImgRot !== 0){
+
+            clearInterval(idImgRot)
+            idImgRot = 0
+
+        }
 
     }
         
@@ -653,5 +641,55 @@ window.addEventListener("beforeunload", (e) => {
     clearInterval(chrono)
     leTemps.clear()
     laStation.clear()
+    indexVilleStorage.clear()
 
 })
+
+//creation de la carte
+const mymap = L.map('mapid').setView([villes[indexVille].lat, villes[indexVille].long], 13)
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: KEYMAP
+}).addTo(mymap)
+
+
+//info ville et velo
+appelAfficheVelo()
+
+//si on change de ville
+selectVille.addEventListener('change', () => {
+
+    setTimeout(() => {
+
+        carte.classList.toggle('cache')
+        placeLoader.classList.toggle('cache')
+    
+    },2000)
+
+    indexVille = selectVille.selectedIndex
+    indexVilleStorage.set(indexVille.toString())
+    mymap.setView([villes[indexVille].lat, villes[indexVille].long], 13)
+    carte.classList.toggle('cache')
+    placeLoader.classList.toggle('cache')
+    
+    //info ville et velo
+    appelAfficheVelo()
+
+})
+
+//affichage de la carte avec effet de chargement
+
+setTimeout(() => {
+
+    carte.classList.toggle('cache')
+    placeLoader.classList.toggle('cache')
+
+},2000)
+
+carte.classList.toggle('cache')
+placeLoader.classList.toggle('cache')
