@@ -69,7 +69,8 @@ const info = document.querySelector('.info')
 
 //dessin formulaire
 let idCligno = 0
-let clignotant = ' '
+let clignotantN = ' '
+let clignotantP = ' '
 let interval = 300
 
 //fonction du dessin formulaire
@@ -99,18 +100,44 @@ function dessine(ctx){
     ctx.fillText(nom.value, (tailleX)*28/100, 120)
     ctx.fillText(prenom.value, (tailleX)*28/100, 160)
 
-    if(clignotant === ' '){
+    if(nom === document.activeElement){
 
-        clignotant = '|'
+        if(clignotantN === ' '){
+
+            clignotantN = '|'
+    
+        }else{
+    
+            clignotantN = ' '
+    
+        }
 
     }else{
 
-        clignotant = ' '
+        clignotantN = ' '
 
     }
 
-    ctx.fillText(clignotant,(tailleX)*28/100 + ctx.measureText(nom.value).width, 120)
-    ctx.fillText(clignotant,(tailleX)*28/100 + ctx.measureText(prenom.value).width, 160)
+    if(prenom === document.activeElement){
+
+        if(clignotantP === ' '){
+
+            clignotantP = '|'
+    
+        }else{
+    
+            clignotantP = ' '
+    
+        }
+
+    }else{
+
+        clignotantP = ' '
+
+    }
+
+    ctx.fillText(clignotantN,(tailleX)*28/100 + ctx.measureText(nom.value).width, 120)
+    ctx.fillText(clignotantP,(tailleX)*28/100 + ctx.measureText(prenom.value).width, 160)
 
     ctx.save()
         
