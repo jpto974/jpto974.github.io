@@ -47,53 +47,6 @@ class classSlider {
 
     }
 
-    //gestion du slider avec les touches
-
-/*    keyPressed(event){
-
-        event.preventDefault()
-
-        console.log(this)
-
-        let index = this.indexImageActive()
-
-        if(event.keyCode !== 37 && event.keyCode !== 39 ) return
-
-        this.images[index].classList.remove('active')
-        this.cercles[index].classList.remove('active-cercle')
-
-        if(event.keyCode === 37){
-
-            if(index === 0){
-
-                this.images[this.nbImg - 1].classList.add('active')
-                this.cercles[this.nbImg - 1].classList.add('active-cercle')
-
-            }else{
-
-                this.images[index - 1].classList.add('active')
-                this.cercles[index - 1].classList.add('active-cercle')
-
-            }
-
-        }else if(event.keyCode === 39){
-            
-            if(index === this.nbImg - 1){
-
-                this.images[0].classList.add('active')
-                this.cercles[0].classList.add('active-cercle')
-
-
-            }else{
-
-                this.images[index + 1].classList.add('active')
-                this.cercles[index + 1].classList.add('active-cercle')
-
-            }
-        }
-
-    }*/
-
     // gestion du slider avec les cercles
     clickCercle(elm){
 

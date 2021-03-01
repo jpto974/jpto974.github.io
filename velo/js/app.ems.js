@@ -68,6 +68,9 @@ const reserver = document.getElementById('res')
 const info = document.querySelector('.info')
 
 //dessin formulaire
+let idCligno = 0
+let clignotant = ' '
+let interval = 300
 
 //fonction du dessin formulaire
 function dessine(ctx){
@@ -89,14 +92,28 @@ function dessine(ctx){
         ctx.font = '20px serif'
 
     }
-    
+        
     ctx.fillText(labelNom.innerText, 10, 120)
     ctx.fillText(labelPrenom.innerText, 10, 160)
+
     ctx.fillText(nom.value, (tailleX)*28/100, 120)
     ctx.fillText(prenom.value, (tailleX)*28/100, 160)
 
+    if(clignotant === ' '){
+
+        clignotant = '|'
+
+    }else{
+
+        clignotant = ' '
+
+    }
+
+    ctx.fillText(clignotant,(tailleX)*28/100 + ctx.measureText(nom.value).width, 120)
+    ctx.fillText(clignotant,(tailleX)*28/100 + ctx.measureText(prenom.value).width, 160)
+
     ctx.save()
-    
+        
     ctx.beginPath()
     ctx.lineWidth= 2
     ctx.strokeStyle = '#333'
@@ -107,7 +124,7 @@ function dessine(ctx){
     ctx.lineTo((tailleX)*28/100 -12, 124)
     ctx.stroke()
     ctx.closePath()
-    
+        
     ctx.beginPath()
     ctx.lineWidth= 2
     ctx.strokeStyle = '#333'
@@ -118,7 +135,7 @@ function dessine(ctx){
     ctx.lineTo((tailleX)*28/100 -12, 164)
     ctx.stroke()
     ctx.closePath()
-    
+        
     ctx.beginPath()
     ctx.strokeStyle = '#333'
     ctx.font = '20px serif'
@@ -143,6 +160,7 @@ function dessine(ctx){
     ctx.closePath()
 
     ctx.restore()
+
 
 }
 
@@ -237,8 +255,7 @@ function dessinSigne(ctx3){
     function finSigMouse(e){
 
         if (isDrawing === true) {
-            
-            console.log('signe1')
+
             drawLine(ctx3, x, y, e.clientX - rect.left, e.clientY - rect.top)
             x = 0
             y = 0
@@ -258,6 +275,7 @@ function dessinSigne(ctx3){
             this.removeEventListener('mouseup', finSigMouse)
             this.removeEventListener('mousemove', EnCoursMouse)
             this.removeEventListener('mousedown', debutSigMouse)
+            clearInterval(idCligno)
 
         }
 
@@ -266,8 +284,7 @@ function dessinSigne(ctx3){
     function finSingTouch(){
 
         if (isDrawing === true) {
-            
-            console.log('signe1')
+
             x = 0
             y = 0
             isDrawing = false
@@ -286,6 +303,7 @@ function dessinSigne(ctx3){
             this.removeEventListener('touchend', finSingTouch)
             this.removeEventListener('touchmove', EnCoursTouch)
             this.removeEventListener('touchstart', debutSigTouch)
+            clearInterval(idCligno)
 
         }
 
@@ -370,7 +388,17 @@ function appelAfficheVelo(){
                     mymap.setView([lieu.lat, lieu.lng], 13)
                     
                     //dessin du formulaire
-                    dessine(ctx)
+                    if(idCligno !== 0){
+
+                        clearInterval(idCligno)
+                
+                    }
+                    idCligno = setInterval(() => {
+                        
+                        ctx.clearRect(0, 0, canvas.width, canvas.height)
+                        dessine(ctx)
+
+                    }, interval)
 
                     ctx2.font = '20px serif'
                     ctx2.fillStyle = "#333"
@@ -399,8 +427,10 @@ function appelAfficheVelo(){
 //fonction réservation
 
 function reservation(){
+
+    const regex = /[^\w\s]/g
     
-    if(nom.value !== '' && prenom.value !== '' && tabInfo[3] !== '0'){
+    if(nom.value !== '' && prenom.value !== '' && tabInfo[3] !== '0' && nom.value.search(regex) === -1 && prenom.value.search(regex) === -1){
 
         canvas.classList.toggle('cache')
         canvasTitre.classList.toggle('cache')
@@ -418,9 +448,9 @@ function reservation(){
 
     }else {
 
-        if(nom.value === '' || prenom.value === ''){
+        if(nom.value === '' || prenom.value === '' || nom.value.search(regex) !== -1 || prenom.value.search(regex) !== -1){
 
-            alert(`Bonjour, Vous n'avez pas renseigné le nom et le prénom`)
+            alert(`Bonjour, Vous n'avez pas renseigné le nom et le prénom, il ne doivent pas contenir de caractères spéciaux`)
 
         }else{
 
@@ -438,19 +468,37 @@ nom.addEventListener('keyup', (lettre) => {
 
     let text = lettre.target.value
     nom.value = text
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    dessine(ctx)
+    if(idCligno !== 0){
+
+        clearInterval(idCligno)
+
+    }
+    idCligno = setInterval(() => {
+                        
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        dessine(ctx)
+
+    }, interval)
 
 })
 
 //ecrire le prenom
 
 prenom.addEventListener('keyup', (lettre) => {
-
+    
     let text = lettre.target.value
     prenom.value = text
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    dessine(ctx)
+    if(idCligno !== 0){
+
+        clearInterval(idCligno)
+
+    }
+    idCligno = setInterval(() => {
+                        
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        dessine(ctx)
+
+    }, interval)
 
 })
 
@@ -594,7 +642,7 @@ slider.addEventListener('click', (elm) => {
 
 //gestion du slider avec les touches
 
-function leSliderKeyPressed(event){
+function keyPressed(event){
 
     event.preventDefault()
 
@@ -612,6 +660,8 @@ function leSliderKeyPressed(event){
 
     leSlider.images[index].classList.remove('active')
     leSlider.cercles[index].classList.remove('active-cercle')
+    lesInfos.images[index].classList.remove('active')
+    lesInfos.cercles[index].classList.remove('active-cercle')
 
     if(event.keyCode === 37){
 
@@ -619,11 +669,15 @@ function leSliderKeyPressed(event){
 
             leSlider.images[leSlider.nbImg - 1].classList.add('active')
             leSlider.cercles[leSlider.nbImg - 1].classList.add('active-cercle')
+            lesInfos.images[lesInfos.nbImg - 1].classList.add('active')
+            lesInfos.cercles[lesInfos.nbImg - 1].classList.add('active-cercle')
 
         }else{
 
             leSlider.images[index - 1].classList.add('active')
             leSlider.cercles[index - 1].classList.add('active-cercle')
+            lesInfos.images[index - 1].classList.add('active')
+            lesInfos.cercles[index - 1].classList.add('active-cercle')
 
         }
 
@@ -633,60 +687,14 @@ function leSliderKeyPressed(event){
 
             leSlider.images[0].classList.add('active')
             leSlider.cercles[0].classList.add('active-cercle')
-
-
-        }else{
-
-            leSlider.images[index + 1].classList.add('active')
-            leSlider.cercles[index + 1].classList.add('active-cercle')
-
-        }
-    }
-
-}
-
-function lesInfosKeyPressed(event){
-
-    event.preventDefault()
-
-    let index = lesInfos.indexImageActive()
-
-    if(event.keyCode !== 37 && event.keyCode !== 39 ) return
-
-    if(idImgRot !== 0){
-
-        clearInterval(idImgRot)
-        idImgRot = 0
-
-    }
-
-    lesInfos.images[index].classList.remove('active')
-    lesInfos.cercles[index].classList.remove('active-cercle')
-
-    if(event.keyCode === 37){
-
-        if(index === 0){
-
-            lesInfos.images[lesInfos.nbImg - 1].classList.add('active')
-            lesInfos.cercles[lesInfos.nbImg - 1].classList.add('active-cercle')
-
-        }else{
-
-            lesInfos.images[index - 1].classList.add('active')
-            lesInfos.cercles[index - 1].classList.add('active-cercle')
-
-        }
-
-    }else if(event.keyCode === 39){
-            
-        if(index === lesInfos.nbImg - 1){
-
             lesInfos.images[0].classList.add('active')
             lesInfos.cercles[0].classList.add('active-cercle')
 
 
         }else{
 
+            leSlider.images[index + 1].classList.add('active')
+            leSlider.cercles[index + 1].classList.add('active-cercle')
             lesInfos.images[index + 1].classList.add('active')
             lesInfos.cercles[index + 1].classList.add('active-cercle')
 
@@ -696,8 +704,7 @@ function lesInfosKeyPressed(event){
 }
 
 // gestion du slider avec les touches
-document.addEventListener('keyup', leSliderKeyPressed)
-document.addEventListener('keyup', lesInfosKeyPressed)
+document.addEventListener('keyup', keyPressed)
 
 
 //affichage info
