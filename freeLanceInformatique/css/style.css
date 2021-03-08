@@ -1,0 +1,316 @@
+*, ::before, ::after {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+
+    background: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+}
+
+.max-container {
+
+    width: 80%;
+    max-width: 1000px;
+    min-width: 500px;
+    background: #f1f1f1;
+    color: #333;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.facture {
+
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.prestataire, .client {
+
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: start;
+    height: 200px;
+
+}
+
+.prestataire {
+
+    width: calc(60% - 20px);
+
+}
+
+.client {
+
+    width: calc(40% - 20px);
+
+}
+
+.client form input {
+
+    margin: 5px;
+
+}
+
+.nom-facture {
+
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.grid-container {
+
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr 1fr 1fr;
+
+}
+
+.grid-item {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid-item:not(:last-child){
+
+    border-right: 2px solid #333;
+
+}
+
+.ligne-entete, .ligne-facturable {
+
+    width: calc(100% - 20px);
+    font-size: 15px;
+    border: 2px solid #333;
+
+}
+
+.ligne-entete {
+
+    margin: 10px auto 0px;
+
+}
+
+.ligne-facturable {
+
+    margin: 5px auto 0px;
+
+}
+
+.ligne {
+
+    width: 100%;
+
+}
+
+.ligne-facturable input {
+
+    width: 100%;
+
+}
+
+.ligne-facturable form:not(:first-child){
+
+    border-top: 2px solid #333;
+
+}
+
+.ligne:not(:last-child){
+
+    border-bottom: 2px solid #333;
+
+}
+
+.tarif {
+
+    display: grid;
+    width: calc(100% - 20px);
+    grid-template: 50px 50px 50px / 2fr 3fr 1fr 1fr 1fr;
+    margin: 5px auto 10px;
+    text-align: start;
+
+}
+
+.ht, .tva, .ttc {
+
+    padding-top: 10%;
+    font-size: 15px;
+
+}
+
+.ht, .ttc {
+
+    width: 100%;
+    border: 2px solid #333;
+
+}
+
+.ht {
+
+    grid-area: 1 / 5 / 2 / -1;
+
+}
+
+.tva {
+
+    grid-area: 2 / 5 / 3 / -1;
+    width: 100%;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+
+}
+
+.ttc {
+
+    grid-area: 3 / 5 / 4 / -1;
+
+}
+
+.validation {
+
+    margin: 20px;
+    opacity: 0;
+
+}
+
+.pro, .cl {
+
+    text-align: center;
+
+}
+
+.pro div, .cl div {
+
+    text-align: start;
+    margin: 5px;
+
+}
+
+.pro button, .cl button {
+
+    margin: 5px;
+
+}
+
+button {
+
+    padding: 5px;
+    margin: 2px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.info {
+
+    width: 100%;
+
+}
+
+#info {
+
+    width: 100%;
+    font-size: 15px;
+
+}
+
+#valider {
+
+    padding: 5px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.valide {
+  
+    opacity: 1!important;
+  
+}
+
+@media screen and (max-width: 960px){
+
+    .max-container {
+
+        width: 100%;
+
+    }
+
+    .prestataire {
+
+        width: calc(50% - 20px);
+    
+    }
+    
+    .client {
+    
+        width: calc(50% - 20px);
+    
+    }
+
+
+
+}
+
+@media screen and (max-width: 760px){
+
+
+
+    .prestataire, .client {
+
+        margin: 5px;
+    
+    }
+
+
+
+}
+
+@media screen and (max-width: 600px){
+
+    .max-container {
+
+        margin: 10px auto
+    
+    }
+
+    .prestataire, .client {
+
+        height: auto;
+
+    }
+
+
+
+}
+

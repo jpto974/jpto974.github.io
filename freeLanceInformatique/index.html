@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Fichier css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>FreeLance Informatique</title>
+</head>
+<body>
+
+    <div class="max-container">
+
+        <h1>Créer votre facture</h1>
+
+        <div class="facture">
+
+            <div class="prestataire"></div>
+            <div class="client"></div>
+            <div class="nom-facture"></div>
+            <div class="ligne-entete grid-container">
+                <div class="grid-item">Référence</div>
+                <div class="grid-item">Description</div>
+                <div class="grid-item">Quantité</div>
+                <div class="grid-item">Prix unitaire</div>
+                <div class="grid-item">Total</div>
+            </div>
+            <div class="ligne-facturable"></div>
+            <div class="tarif">
+                <div class="ht"></div>
+                <div class="tva"></div>
+                <div class="ttc"></div>
+            </div>
+
+        </div>
+
+        <div class="info">
+            
+            <p id="info"></p>
+        
+        </div>
+
+        <div class="validation">
+            <form>
+                <button type="submit" id="valider">Validez votre facture</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script  type="module" src="js/app.ems.js" defer></script>
+</body>
+</html>
