@@ -55,6 +55,7 @@ function save(e ,list){
 function suppr(e, list){
 
     const returnFrom = e.target.parentNode.parentNode.childNodes//retour au form de l'event
+    let tabVerif = []
     let verif = false
     const valNode = returnFrom[0].childNodes//retour au input contenant les valeur
     let recupVal = []
@@ -63,19 +64,40 @@ function suppr(e, list){
         recupVal[i] = valNode[i].childNodes[1].value
 
     }
+
+    for(let i = 0; i < recupVal.length; i++){//initialisation du tableau verif toutes les valeurs doivent être égale
+
+        tabVerif[i] = false
+
+    }
+
     list.listL.forEach(val => {
 
         for(let i = 0; i < recupVal.length; i++){
 
             if(recupVal[0] !== '' && recupVal[i] === val[i]){
 
-                verif = true
+                tabVerif[i] = true
 
             }
         
         }
 
     })
+
+    for(let i = 0; i < recupVal.length; i++){//vérification du tableau verif
+
+        if(tabVerif[i]){
+
+            verif = true
+
+        }else{
+
+            verif = false
+
+        }
+
+    }
 
     if(verif){
 
